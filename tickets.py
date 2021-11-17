@@ -1,6 +1,7 @@
 import datetime
 
-class tickettype():
+
+class ticket():
     ticketprice = 50
     concert_date = ["31","12","2021"]
     early_date = ["01","11","2021"]
@@ -9,7 +10,11 @@ class tickettype():
     adj_time_now= [time_now.strftime("%d"), time_now.strftime("%m"), time_now.strftime("%Y")]
     advance_purchase_price =   ticketprice * .6
     late_purchase_price = ticketprice * 1.1   
-    studentprice = ticketprice * .5
+    studentprice = int(ticketprice * .5)
+    ticket_type = ("")
+    final_price = ()
+    newnumb = ()
+    number = [] 
 
     def __init__(self):
         self.tickettype()
@@ -36,39 +41,43 @@ class tickettype():
         else: 
             print (f"Currently, regular tickets are ${self.ticketprice}.  Whereas Student tickets remain ${self.studentprice}.")
         
-        tickettype()
+            self.tickettype()
 
     def regularticket(self):
         if self.adj_time_now < self.early_date:
-            print ("Regular: Advanced Purchase")
+            self.ticket_type = ("Regular Adult Ticket - Advanced Purchase")
+            self.final_price = self.advance_purchase_price
             print (f"{self.advance_purchase_price}") 
+
         elif self.adj_time_now > self.late_date:
-            print ("Regular: Late Purchase")
+            self.ticket_type = ("Regular Adult Ticket - Late Purchase")
+            self.final_price = self.late_purchase_price
             print (f"{self.late_purchase_price}")
-        else: 
-            print ("Regular Ticket") 
+
+        else:
+            self.ticket_type = ("Regular Adult Ticket") 
+            self.final_price = self.ticketprice
             print (f"{self.ticketprice}")
-       
-        numbersystem()
-
-    def studentticket(self):
-        print ("Student Ticket")
-        print (f"{self.studentprice}") 
         
-        numbersystem()
-
-class numbersystem():
-    number = [] 
-    def __init__(self):
         self.ticketnumber()
 
+    def studentticket(self):
+        self.ticket_type = ("Student Ticket") 
+        self.final_price = self.studentprice
+        print (f"{self.studentprice}")
+
+        self.ticketnumber() 
+
     def ticketnumber(self):
-        newnumb = (len(numbersystem.number) + 1)
-        numbersystem.number.append(newnumb)
-        print(newnumb)
+        self.newnumb = str(len(self.number) + 1).zfill(4)
+        self.number.append(self.newnumb)
     
-        tickettype()
+        self.make_ticket()
+
+    def make_ticket(self):
+        print(f"Ticket number: {self.newnumb}, {self.ticket_type}, ${self.final_price}")
    
-tickettype()
+        ticket()
+ticket()
 
 
