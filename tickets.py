@@ -7,7 +7,7 @@ class ticket():
     early_date = ["01","11","2021"]
     late_date = ["21","12","2021"]
     time_now = datetime.datetime.now()
-    adj_time_now= [time_now.strftime("%d"), time_now.strftime("%m"), time_now.strftime("%Y")]
+    adj_time_now = [time_now.strftime("%d"), time_now.strftime("%m"), time_now.strftime("%Y")]
     advance_purchase_price =   ticketprice * .6
     late_purchase_price = ticketprice * 1.1   
     studentprice = int(ticketprice * .5)
@@ -30,7 +30,7 @@ class ticket():
             else:
                 self.studentticket()
         else:
-            print("Error: Please choose between (R) for regular or (S) for student.")
+            print("Error: Please choose between (R) for regular or (S) for student, or choose (c) for a price check.")
             self.tickettype()
 
     def pricecheck(self):
