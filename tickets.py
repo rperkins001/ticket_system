@@ -47,17 +47,14 @@ class ticket():
         if self.adj_time_now < self.early_date:
             self.ticket_type = ("Regular Adult Ticket - Advanced Purchase")
             self.final_price = self.advance_purchase_price
-            print (f"{self.advance_purchase_price}") 
-
+            
         elif self.adj_time_now > self.late_date:
             self.ticket_type = ("Regular Adult Ticket - Late Purchase")
             self.final_price = self.late_purchase_price
-            print (f"{self.late_purchase_price}")
 
         else:
             self.ticket_type = ("Regular Adult Ticket") 
             self.final_price = self.ticketprice
-            print (f"{self.ticketprice}")
         
         self.ticketnumber()
 
