@@ -21,7 +21,7 @@ class ticket():
 
     def tickettype(self):
         valid_choices = ["c", "r", "s"]
-        choice = input("Press'R' to purchase a regular ticket,  press 'S' to purchase a student ticket, or press 'C' to check prices. ").lower()
+        choice = input("Press'R' to purchase a regular ticket,  press 'S' to purchase a student ticket, or press 'C' to check prices: ").lower()
         if choice in valid_choices:
             if choice == 'c':
                 self.pricecheck()
@@ -61,7 +61,6 @@ class ticket():
     def studentticket(self):
         self.ticket_type = ("Student Ticket") 
         self.final_price = self.studentprice
-        print (f"{self.studentprice}")
 
         self.ticketnumber() 
 
